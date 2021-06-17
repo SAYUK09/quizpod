@@ -7,7 +7,7 @@ import { Home } from "./components/Home/Home";
 import { Nav } from "./components/Nav/Nav";
 import { QuizListing } from "./components/Quiz-Listing/Quiz-Listing";
 import { useQuiz } from "./contexts/Quiz-Context";
-import { Login } from "./components/Login/Login";
+import { Login } from "./auth/Login/Login";
 import { useAuth0 } from "@auth0/auth0-react";
 
 export default function App() {
