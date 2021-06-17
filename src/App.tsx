@@ -7,9 +7,13 @@ import { Home } from "./components/Home/Home";
 import { Nav } from "./components/Nav/Nav";
 import { QuizListing } from "./components/Quiz-Listing/Quiz-Listing";
 import { useQuiz } from "./contexts/Quiz-Context";
+import { Login } from "./components/Login/Login";
+import { useAuth0 } from "@auth0/auth0-react";
 
 export default function App() {
   const { state, dispatch } = useQuiz();
+  const { isAuthenticated, user } = useAuth0();
+  console.log(user);
 
   useEffect(() => {
     (async function () {
@@ -46,8 +50,12 @@ export default function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/quiz/:id" element={<Quiz />} />
+        <Route
+          path="/quiz/:id"
+          element={isAuthenticated ? <Quiz /> : <Login />}
+        />
         <Route path="/quiz" element={<QuizListing />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </div>
   );

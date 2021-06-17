@@ -3,9 +3,7 @@ import { BrowserRouter as Router, Link } from "react-router-dom";
 import ArrowForwardIosRoundedIcon from "@material-ui/icons/ArrowForwardIosRounded";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
-
 import React from "react";
-
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 
 export function QuizListing() {
@@ -14,9 +12,9 @@ export function QuizListing() {
       display: "flex",
       "& > *": {
         margin: theme.spacing(1),
-        fontSize: "2rem"
-      }
-    }
+        fontSize: "2rem",
+      },
+    },
   }));
 
   const classes = useStyles();
@@ -37,7 +35,7 @@ export function QuizListing() {
               </Button>
             </Link>
 
-            <Link className="routerLink" to="/quiz/quiz1">
+            <Link className="routerLink" to="/quiz/quiz2">
               <Button style={{ fontSize: "1.5rem", color: "#3b82f6" }}>
                 Quiz 2{" "}
               </Button>
