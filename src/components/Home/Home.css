@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.homeParent {
+  min-height: 100vh;
+  background-color: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("https://ibb.co/FhdGYbR");
+  background-position: center;
+  /* background-color:rebeccapurple; */
+}
+
+.homeBody {
+  margin-bottom: 2rem;
+}
+
+.headText {
+  padding: 2rem;
+  text-align: center;
+}
+
+.headText h1 {
+  padding: 1rem;
+  text-align: center;
+  font-size: 2.5rem;
+  text-shadow: 0px 1px 10px rgba(59, 130, 246, 0.6);
+}
+
+.spanText {
+  color: #3b82f6;
+}
+
+.primaryBtn {
+  background-color: #3b82f6;
+  color: white;
+  font-size: 1rem;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.routerLink {
+  text-decoration: none;
+}

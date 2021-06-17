@@ -1,0 +1,25 @@
+/* .nav {
+  background: #3b82f6 !important;
+
+  display: flex !important;
+  justify-content: space-between !important;
+} */
+
+
+/* .navLabel {
+  color: white !important;
+  margin-left: 1rem;
+} */
+.navLogo {
+  display: flex;
+  color: white;
+  align-items: center;
+  padding: 0 1rem;
+  width: 60%;
+}
+
+.navIcon {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+}
