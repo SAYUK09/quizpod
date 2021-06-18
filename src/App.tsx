@@ -15,35 +15,35 @@ export default function App() {
   const { isAuthenticated, user } = useAuth0();
   console.log(user);
 
-  useEffect(() => {
-    (async function () {
-      try {
-        const response = await axios.get(
-          `https://Quiz-App-API.sayuk.repl.co/quiz2`
-        );
-        console.log(response.data, "ressss");
+  // useEffect(() => {
+  //   (async function () {
+  //     try {
+  //       const response = await axios.get(
+  //         `https://Quiz-App-API.sayuk.repl.co/quiz2`
+  //       );
+  //       console.log(response.data, "ressss");
 
-        dispatch({ type: "SET_DATA", payload: { data: response.data } });
-      } catch (err) {
-        console.log(err, "errr");
-      }
-    })();
-  }, []);
+  //       dispatch({ type: "SET_DATA", payload: { data: response.data } });
+  //     } catch (err) {
+  //       console.log(err, "errr");
+  //     }
+  //   })();
+  // }, []);
 
-  useEffect(() => {
-    (async function () {
-      try {
-        const response = await axios.get(
-          `https://Quiz-App-API.sayuk.repl.co/quiz1`
-        );
-        console.log(response.data, "ressss");
+  // useEffect(() => {
+  //   (async function () {
+  //     try {
+  //       const response = await axios.get(
+  //         `https://Quiz-App-API.sayuk.repl.co/quiz1`
+  //       );
+  //       console.log(response.data, "ressss");
 
-        dispatch({ type: "SET_DATA", payload: { data: response.data } });
-      } catch (err) {
-        console.log(err, "errr");
-      }
-    })();
-  }, []);
+  //       dispatch({ type: "SET_DATA", payload: { data: response.data } });
+  //     } catch (err) {
+  //       console.log(err, "errr");
+  //     }
+  //   })();
+  // }, []);
 
   return (
     <div className="App">

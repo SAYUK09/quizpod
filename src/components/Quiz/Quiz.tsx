@@ -114,11 +114,15 @@ export function Quiz() {
           </div>
 
           <div className="quesContainer">
-            <h3>Q : {state.data.questions[state.currentQsNo].question}</h3>
+            <h3>
+              Q :{" "}
+              {state.data.questions.length &&
+                state.data.questions[state.currentQsNo].question}
+            </h3>
           </div>
 
           <div className="optDiv">
-            {state.data.questions &&
+            {state.data.questions.length &&
               state.data.questions[state.currentQsNo].options.map(
                 (item: any) => (
                   <button
