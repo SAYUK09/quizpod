@@ -5,11 +5,13 @@ import { useAuth0 } from "@auth0/auth0-react";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
 import ExtensionIcon from "@material-ui/icons/Extension";
-
 import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
+import PersonIcon from "@material-ui/icons/Person";
+import { BsFillPersonFill } from "react-icons/bs";
 import { makeStyles } from "@material-ui/core/styles";
 import { LogoutButton } from "../../auth/Login/LogoutButton";
 import { LoginButton } from "../../auth/Login/LoginButton";
+import { LinkClassKey } from "@material-ui/core";
 
 export function Nav() {
   const [value, setValue] = useState("recents");
@@ -63,8 +65,14 @@ export function Nav() {
             icon={<ExtensionIcon />}
           />
         </Link>
-        {user && <p>{user.name} </p>}
-        {user ? <LogoutButton /> : <LoginButton />}
+        {user && (
+          <Link className="routerLinkProfile" to="login">
+            <span className="profileIcon">
+              <BsFillPersonFill />
+            </span>
+            <div>{user.name}</div>
+          </Link>
+        )}
       </BottomNavigation>
     </>
   );

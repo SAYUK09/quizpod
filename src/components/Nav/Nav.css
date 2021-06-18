@@ -5,7 +5,6 @@
   justify-content: space-between !important;
 } */
 
-
 /* .navLabel {
   color: white !important;
   margin-left: 1rem;
@@ -22,4 +21,21 @@
   width: 50%;
   display: flex;
   justify-content: space-around;
+}
+
+.routerLinkProfile {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  margin-right: 1.2rem;
+}
+
+.profileIcon {
+  font-size: 1.5rem;
+}
+
+.userDiv {
+  height: 100%;
 }
