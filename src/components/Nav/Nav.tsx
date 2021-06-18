@@ -65,13 +65,15 @@ export function Nav() {
             icon={<ExtensionIcon />}
           />
         </Link>
-        {user && (
+        {user ? (
           <Link className="routerLinkProfile" to="login">
             <span className="profileIcon">
               <BsFillPersonFill />
             </span>
             <div>{user.name}</div>
           </Link>
+        ) : (
+          <LoginButton />
         )}
       </BottomNavigation>
     </>
