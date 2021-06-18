@@ -70,7 +70,9 @@ export function Nav() {
             <span className="profileIcon">
               <BsFillPersonFill />
             </span>
-            <div>{user.name}</div>
+            <div className="userDetails">
+              {user.name} <p>{user.email}</p>{" "}
+            </div>
           </Link>
         ) : (
           <LoginButton />

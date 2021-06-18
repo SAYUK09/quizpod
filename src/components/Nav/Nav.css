@@ -39,3 +39,7 @@
 .userDiv {
   height: 100%;
 }
+
+.userDetails {
+  padding: 0.5rem;
+}

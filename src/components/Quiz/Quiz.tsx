@@ -4,9 +4,7 @@ import "./Quiz.css";
 import { useQuiz } from "../../contexts/Quiz-Context";
 import { Modals } from "../Modal/Modal";
 import { Timer } from "../Timer/Timer";
-
 import { useParams } from "react-router-dom";
-
 import React from "react";
 import { createStyles, Theme, makeStyles } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
