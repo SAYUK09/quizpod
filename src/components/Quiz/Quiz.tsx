@@ -7,11 +7,10 @@ import { Timer } from "../Timer/Timer";
 import { useParams } from "react-router-dom";
 import React from "react";
 import { createStyles, Theme, makeStyles } from "@material-ui/core/styles";
-import Avatar from "@material-ui/core/Avatar";
 import Chip from "@material-ui/core/Chip";
 import BubbleChartIcon from "@material-ui/icons/BubbleChart";
 import Button from "@material-ui/core/Button";
-import { DragHandle } from "@material-ui/icons";
+import Loader from "react-loader-spinner";
 
 export function Quiz() {
   const { id } = useParams();
@@ -93,7 +92,12 @@ export function Quiz() {
 
       <div className="quizParent">
         <div className="quizBody">
-          <Timer />
+          {state.data.questions.length ? (
+            <Timer />
+          ) : (
+            <Loader type="TailSpin" color="#F59E0B" height={100} width={100} />
+          )}
+
           <div className="headContainer">
             <h3>
               {" "}
