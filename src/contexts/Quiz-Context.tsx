@@ -3,7 +3,7 @@ import React, {
   useContext,
   useEffect,
   useReducer,
-  useState
+  useState,
 } from "react";
 // import { quizDB } from "../components/Quiz/QuizDB";
 import { Quiz } from "../types";
@@ -25,9 +25,9 @@ const initialState: initialStateType = {
       noOfQuestions: 0,
       difficulty: "",
       timeForEachQues: 0,
-      totalPoints: 0
-    }
-  }
+      totalPoints: 0,
+    },
+  },
 };
 
 type StatusType = "starting" | "finished" | "Running";
@@ -67,7 +67,6 @@ export function redcFunc(
 ): initialStateType {
   switch (action.type) {
     case "SET_DATA":
-      console.log(action.payload.data, "lllll");
       return { ...redcState, data: action.payload.data };
       break;
     case "RESET":
@@ -78,7 +77,7 @@ export function redcFunc(
         correct: 0,
         wrong: 0,
         disable: false,
-        showModal: false
+        showModal: false,
       };
 
     case "RIGHT_ANS":
@@ -94,14 +93,14 @@ export function redcFunc(
         return {
           ...redcState,
           currentQsNo: redcState.currentQsNo + 1,
-          disable: false
+          disable: false,
         };
       } else {
         return {
           ...redcState,
           status: "finished",
           disable: true,
-          showModal: true
+          showModal: true,
         };
       }
 

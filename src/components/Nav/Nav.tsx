@@ -16,7 +16,6 @@ import { LinkClassKey } from "@material-ui/core";
 export function Nav() {
   const [value, setValue] = useState("recents");
   const { user } = useAuth0();
-  console.log(user);
 
   const handleChange = (event: any, newValue: any) => {
     setValue(newValue);

@@ -11,6 +11,7 @@ import Chip from "@material-ui/core/Chip";
 import BubbleChartIcon from "@material-ui/icons/BubbleChart";
 import Button from "@material-ui/core/Button";
 import Loader from "react-loader-spinner";
+import { type } from "os";
 
 export function Quiz() {
   const { id } = useParams();
@@ -22,7 +23,6 @@ export function Quiz() {
         const response = await axios.get(
           `https://Quiz-App-API.sayuk.repl.co/${id}`
         );
-        console.log(response.data, "ressss");
 
         dispatch({ type: "SET_DATA", payload: { data: response.data } });
       } catch (err) {
@@ -30,8 +30,6 @@ export function Quiz() {
       }
     })();
   }, []);
-
-  console.log(state.data.questions);
 
   const useChip = makeStyles((theme: Theme) =>
     createStyles({
@@ -78,8 +76,6 @@ export function Quiz() {
 
   const [selected, setSelected] = useState("");
 
-  console.log(selected, "sell");
-
   const checkHandler = (selectedAns: any) => {
     if (selected === selectedAns && selectedAns.isRight === false)
       return "wrong";
@@ -95,7 +91,7 @@ export function Quiz() {
           {state.data.questions.length ? (
             <Timer />
           ) : (
-            <Loader type="TailSpin" color="#F59E0B" height={100} width={100} />
+            <Loader type="TailSpin" color="#F59E0B" height={200} width={200} />
           )}
 
           <div className="headContainer">
@@ -122,6 +118,8 @@ export function Quiz() {
                 state.data.questions[state.currentQsNo].question}
             </h3>
           </div>
+
+          {console.log(state.data.questions)}
 
           <div className="optDiv">
             {state.data.questions.length &&

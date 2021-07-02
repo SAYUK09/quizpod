@@ -13,7 +13,6 @@ import { useAuth0 } from "@auth0/auth0-react";
 export default function App() {
   const { state, dispatch } = useQuiz();
   const { isAuthenticated, user } = useAuth0();
-  console.log(user);
 
   return (
     <div className="App">
