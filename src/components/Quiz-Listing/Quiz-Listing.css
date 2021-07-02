@@ -1,0 +1,8 @@
+.QuizListingParent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 91vh;
+  background-color: #f3f4f6;
+}
