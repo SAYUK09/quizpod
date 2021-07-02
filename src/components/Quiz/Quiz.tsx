@@ -11,7 +11,18 @@ import Chip from "@material-ui/core/Chip";
 import BubbleChartIcon from "@material-ui/icons/BubbleChart";
 import Button from "@material-ui/core/Button";
 import Loader from "react-loader-spinner";
-import { type } from "os";
+
+export type Ques = {
+  id: string;
+  points: number;
+  negativePoints: number;
+  options: Options[];
+};
+
+export type Options = {
+  answer: string;
+  isRight: boolean;
+};
 
 export function Quiz() {
   const { id } = useParams();
@@ -74,9 +85,10 @@ export function Quiz() {
   const button = useButton();
   const secBtn = useSecButton();
 
-  const [selected, setSelected] = useState("");
+  const [selected, setSelected] = useState<Options | null>(null);
 
-  const checkHandler = (selectedAns: any) => {
+  const checkHandler = (selectedAns: Options) => {
+    console.log(selectedAns, "selected ans");
     if (selected === selectedAns && selectedAns.isRight === false)
       return "wrong";
     else if (selectedAns.isRight === true) return "right";
@@ -124,13 +136,14 @@ export function Quiz() {
           <div className="optDiv">
             {state.data.questions.length &&
               state.data.questions[state.currentQsNo].options.map(
-                (item: any) => (
+                (item: Options) => (
                   <button
                     className={`singleOption  ${
                       selected && checkHandler(item)
                     }`}
                     disabled={state.disable}
                     onClick={() => {
+                      console.log(item, "iiiiiiii");
                       setSelected(item);
                       dispatch({ type: "TOGGLE_DISABLE" });
 
@@ -162,7 +175,7 @@ export function Quiz() {
           <div className="submitButtonDiv">
             <Button
               onClick={() => {
-                setSelected("");
+                setSelected(null);
                 dispatch({ type: "RESET" });
               }}
               className={button.root}
@@ -174,7 +187,7 @@ export function Quiz() {
 
             <Button
               onClick={() => {
-                setSelected("");
+                setSelected(null);
 
                 dispatch({ type: "TOGGLE_DISABLE" });
 
