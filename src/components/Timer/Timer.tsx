@@ -1,5 +1,4 @@
 import "./Timer.css";
-import { useEffect, useState } from "react";
 import { useQuiz } from "../../contexts/Quiz-Context";
 import React from "react";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
@@ -13,6 +12,8 @@ export function Timer() {
         isPlaying
         size={120}
         duration={15}
+        strokeWidth={6}
+        // strokeLinecap={"square"}
         key={state.currentQsNo}
         onComplete={() => {
           dispatch({ type: "NEXT_QUE" });

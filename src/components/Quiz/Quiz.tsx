@@ -103,7 +103,7 @@ export function Quiz() {
           {state.data.questions.length ? (
             <Timer />
           ) : (
-            <Loader type="TailSpin" color="#F59E0B" height={200} width={200} />
+            <Loader type="TailSpin" color="#F59E0B" height={150} width={150} />
           )}
 
           <div className="headContainer">
@@ -143,7 +143,6 @@ export function Quiz() {
                     }`}
                     disabled={state.disable}
                     onClick={() => {
-                      console.log(item, "iiiiiiii");
                       setSelected(item);
                       dispatch({ type: "TOGGLE_DISABLE" });
 
