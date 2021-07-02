@@ -9,7 +9,9 @@ export function Timer() {
   return (
     <div className="App">
       <CountdownCircleTimer
-        isPlaying
+        isPlaying={
+          state.data.questions.length - state.currentQsNo == 1 ? false : true
+        }
         size={120}
         duration={15}
         strokeWidth={6}
