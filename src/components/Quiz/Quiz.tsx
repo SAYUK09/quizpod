@@ -197,7 +197,7 @@ export function Quiz() {
               variant="outlined"
               color="primary"
             >
-              Skip
+              {selected ? "NEXT" : "SKIP"}
             </Button>
           </div>
         </div>
