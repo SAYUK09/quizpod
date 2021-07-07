@@ -1,3 +1,4 @@
+import { PlaylistAddOutlined } from "@material-ui/icons";
 import React, {
   createContext,
   useContext,
@@ -78,6 +79,7 @@ export function redcFunc(
         wrong: 0,
         disable: false,
         showModal: false,
+        status: "starting",
       };
 
     case "RIGHT_ANS":
@@ -94,6 +96,7 @@ export function redcFunc(
           ...redcState,
           currentQsNo: redcState.currentQsNo + 1,
           disable: false,
+          status: "Running",
         };
       } else {
         return {

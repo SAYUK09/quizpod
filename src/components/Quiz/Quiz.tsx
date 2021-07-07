@@ -89,6 +89,7 @@ export function Quiz() {
 
   const checkHandler = (selectedAns: Options) => {
     console.log(selectedAns, "selected ans");
+
     if (selected === selectedAns && selectedAns.isRight === false)
       return "wrong";
     else if (selectedAns.isRight === true) return "right";
@@ -101,7 +102,7 @@ export function Quiz() {
       <div className="quizParent">
         <div className="quizBody">
           {state.data.questions.length ? (
-            <Timer />
+            <Timer setter={setSelected} />
           ) : (
             <Loader type="TailSpin" color="#F59E0B" height={150} width={150} />
           )}
@@ -196,7 +197,7 @@ export function Quiz() {
               variant="outlined"
               color="primary"
             >
-              Skip
+              {selected ? "NEXT" : "SKIP"}
             </Button>
           </div>
         </div>
